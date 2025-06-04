@@ -1,15 +1,16 @@
-export default function SelectField({ label, options = [], ...props }) {
+export default function SelectField({ label, name, options = [], required = false, ...rest }) {
   return (
-    <div className="flex flex-col">
-      <label className="text-sm text-gray-700 mb-1">{label}</label>
+    <div className="mb-6">
+      <label className="text-[#2B286D] text-xs font-medium block mb-3">{label}</label>
       <select
-        className="w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[rgb(1,33,105)] text-sm"
-        {...props}
+        name={name}
+        required={required}
+        className="text-[#2B286D] text-xs w-full p-2 border border-gray-300 rounded"
+        {...rest}
       >
+        <option value="">-- Select --</option>
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value} disabled={opt.disabled}>
-            {opt.label}
-          </option>
+          <option key={opt.value} value={opt.value}>{opt.label}</option>
         ))}
       </select>
     </div>
