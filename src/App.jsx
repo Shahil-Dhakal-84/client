@@ -6,7 +6,16 @@ import StudentForm from './pages/StudentForm';
 import './App.css'
 
 function App() {
-  return <StudentForm />;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<SidebarLayout />}>
+          <Route index element={<Home />} />
+          <Route path="student-form" element={<StudentForm />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
