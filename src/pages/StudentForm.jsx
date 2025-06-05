@@ -13,7 +13,7 @@ export default function StudentForm() {
   ];
 
   return (
-    <FormLayout>
+    <FormLayout title={"AREC Commission Calculation"}>
       <InputField label="Name of student:" name="name" required />
 
       <SelectField label="University:" name="university" options={universityOptions} required />
